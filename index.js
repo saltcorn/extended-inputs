@@ -78,6 +78,7 @@ const enhancedSlider = (type) => ({
         attrs.max.toLocaleString(),
         attrs.postfix
       ),
+      div({ class: "d-flex align-self-center" }, attrs.prefix),
       input({
         style: { width: attrs.entry_width + "px" },
         type: attrs?.type || "number",
@@ -97,7 +98,8 @@ const enhancedSlider = (type) => ({
         ...(attrs.max && { max: attrs.max }),
         ...(attrs.min && { min: attrs.min }),
         ...(isdef(v) && { value: text_attr(v) }),
-      })
+      }),
+      div({ class: "d-flex align-self-center" }, attrs.postfix)
     );
   },
 });
